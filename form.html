@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Assignment</title>
+
+    <!-- Bootstrap -->
+    <link href="assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- iCheck -->
+    <link href="assets/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <link href="assets/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="assets/css/custom.css" rel="stylesheet">
+  </head>
+  <style>
+    .error{
+      color:red;
+    }
+  </style>
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="#" class="site_title"><span>Assignment</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <ul class="nav side-menu">
+                  <li><a href="list.php"><i class="fa fa-table"></i> Issues </a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /sidebar menu -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    John Doe
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <div class="">
+  
+              <div class="clearfix"></div>
+  
+              <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h2>Add Issue</small></h2>
+                      <div class="clearfix"></div>
+                    </div>
+  
+                    <div class="x_content">
+                        <form class="form-horizontal form-label-left" id="issuefrm" action="issue.php/store" method="post" enctype="multipart/form-data" >
+
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Subject*</label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <input type="text" class="form-control" placeholder="Subject" name="subject" id="subject" >
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Description</label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                  <textarea class="form-control" rows="3" placeholder="Description" name="discription"></textarea>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" >Status*</label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                  <select class="form-control" name="status">
+                                    <option>New</option>
+                                    <option>Assigned</option>
+                                    <option>In-Progress</option>
+                                    <option>Under-review</option>
+                                    <option>Closed</option>
+                                  </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 col-sm-3 col-xs-12 control-label">Priority*
+                                </label>
+        
+                                <div class="col-md-9 col-sm-9 col-xs-12 priority">
+                                    <div class="radio">
+                                      <label>
+                                        <input type="radio" class="flat"  name="priority" value="High"> High
+                                      </label>
+                                    </div>
+                                    <div class="radio">
+                                      <label>
+                                        <input type="radio" class="flat"  name="priority" value="Medium"> Medium
+                                      </label>
+                                    </div>
+                                    <div class="radio">
+                                      <label>
+                                        <input type="radio" class="flat"  name="priority" value="Low"> Low
+                                      </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group regions" >
+                                <label class="col-md-3 col-sm-3 col-xs-12 control-label">Affected Regions
+                                </label>
+        
+                                <div class="col-md-9 col-sm-9 col-xs-12">
+                                    <div class="radio">
+                                        <label>
+                                          <input type="checkbox" class="flat" name="regions[]" value="China" > China
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                          <input type="checkbox" class="flat" name="regions[]" value="Europe" > Europe
+                                        </label>
+                                      </div>
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox" class="flat" name="regions[]" value="India"> India
+                                      </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                          <input type="checkbox" class="flat" name="regions[]" value="Japan" > Japan
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                          <input type="checkbox" class="flat" name="regions[]" value="Singapore"> Singapore
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox" class="flat" name="regions[]" value="US" >  US
+                                      </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Due Date <span class="required">*</span>
+                              </label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                  <input type="text" id="duedate" class="form-control" placeholder="Due Date" name="duedate">
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Assignee*</label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <select class="form-control" name="assignee">
+                                  <option>Dev 1</option>
+                                  <option>Dev 2</option>
+                                  <option>Dev 3</option>
+                                  <option>Dev 4</option>
+                                  <option>Dev 5</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Reviewer*</label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <select class="form-control" name="reviewer">
+                                  <option>Dev 1</option>
+                                  <option>Dev 2</option>
+                                  <option>Dev 3</option>
+                                  <option>Dev 4</option>
+                                  <option>Dev 5</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Target Version*</label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <select class="form-control" name="targetversion">
+                                  <option>1.0.0</option>
+                                  <option>1.0.1</option>
+                                  <option>1.1.0</option>
+                                  <option>1.1.1</option>
+                                  <option>1.1.2</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Images*</label>
+                                <div class="col-md-9 col-sm-9 col-xs-12">
+                                    <input type="file" multiple class="form-control" placeholder="Images" name="imagephoto">
+                                </div>
+                              </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Reviewer Comments</label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                  <textarea class="form-control" rows="3" placeholder="Reviwer Comments" name="reviewercomment"></textarea>
+                              </div>
+                            </div>
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                              <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                                <button type="button" class="btn btn-primary" name="cancel">Cancel</button>
+                                <button type="reset" class="btn btn-primary" name="reset">Reset</button>
+                                <button type="submit" class="btn btn-success" name="submitissue">Submit</button>
+                              </div>
+                            </div>
+                          </form>              
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="assets/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="assets/fastclick/lib/fastclick.js"></script>
+    <!-- iCheck -->
+    <script src="assets/iCheck/icheck.min.js"></script>
+    <!-- DateJS -->
+    <script src="assets/DateJS/build/date.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="assets/moment/min/moment.min.js"></script>
+
+    <script src="assets/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Autosize -->
+    <script src="assets/autosize/dist/autosize.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="assets/js/custom.js"></script>
+    
+    <script>
+      $('input[name="subject"]').change(function(){
+       let  data ={
+          'subject':$('input[name="subject"]').val()
+        };
+        var saveData = $.ajax({
+            type: 'POST',
+            url: "issue.php/checkDublicate",
+            data: data,
+            dataType: "text",
+            success: function(result) {              
+                if(result > 0) {
+                    $('input[name="subject"]').after('<span class="error">Subject name already exist,Please try another.</span>');
+                    $('button[name="submitissue"]').prop( "disabled", true );  
+                }else{
+                    $('input[name="subject"]').next("span").remove();
+                    $('button[name="submitissue"]').prop( "disabled", false );  
+                }
+              
+            }
+        });
+        saveData.error(function() { alert("Something went wrong"); });
+      });
+
+      $('button[name="reset"]').click(function(){
+        $('input[name^="regions[]"]').parent('div').removeClass('checked');
+        $('input[name^="priority"]').parent('div').removeClass('checked');
+        $('input[name^="priority"]').prop('checked',false);
+        $('input[name^="regions[]"]').prop('checked',false);
+        
+      });
+
+      $('form').on('submit', function() {
+          let flag = true;
+          var flagcheck = true;
+          var flagRadio = true;
+          $('.error').remove();
+          let mandetory = ['subject','status','priority','duedate','assignee','reviewer','targetversion','imagephoto'];
+          if( $('input[name="subject"]').val()==''){
+            $('input[name="subject"]').after('<span class="error">Please provide subject.</span>'); 
+            flag = false; 
+          }
+         
+          if( $('select[name="status"]').val()==''){
+            $('select[name="status"]').after('<span class="error">Please provide status.</span>'); 
+             flag = false; 
+          }
+          
+          if( $('input[name="duedate"]').val()==''){
+            $('input[name="duedate"]').after('<span class="error">Please select duedate.</span>'); 
+            flag = false; 
+          }
+          if( $('select[name="assignee"]').val()==''){
+            $('select[name="assignee"]').after('<span class="error">Please select assignee.</span>'); 
+            flag = false; 
+          }
+          if( $('input[name="imagephoto"]').val()==''){
+            $('input[name="imagephoto"]').after('<span class="error">Please select Images.</span>'); 
+            flag = false; 
+          }
+          
+          $('input[name^="regions[]"]').each(function(){           
+              if ($(this).prop('checked')==true){               
+                  flagcheck = false;
+              }           
+          });
+          if(flagcheck == true){
+                $('.regions').next("span").remove();
+                $('.regions').after('<span class="error">Please select regions.</span>'); 
+                flag = false;  
+            }
+            $('input[name^="priority"]').each(function(){           
+              if ($(this).prop('checked')==true){               
+                flagRadio = false;
+              }           
+              });
+              if(flagRadio == true){
+                $('.priority').next("span").remove();
+                $('.priority').after('<span class="error">Please select priority.</span>'); 
+                flag = false;  
+            }
+            
+          return flag;
+      });
+
+      $("#checkAll").click(function () {
+         $('input:checkbox').not(this).prop('checked', this.checked);
+      });
+
+      $('button[name="cancel"]').click(function(){
+          window.location.href = "http://localhost/assignment/list.php";
+      });
+      
+    </script>
+
+  </body>
+</html>
